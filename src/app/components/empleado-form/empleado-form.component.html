@@ -1,0 +1,51 @@
+<div class="col-md-4 offset-md-3">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <input type="text" name="nombre" [(ngModel)]="empleado.nombre" placeholder="Nombre" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="apellido" [(ngModel)]="empleado.apellido" placeholder="Apellido" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="direccion" [(ngModel)]="empleado.direccion" placeholder="Direccion" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="salario" [(ngModel)]="empleado.salario" placeholder="Salario" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="codigoempleado" [(ngModel)]="empleado.codigoempleado" placeholder="Codigo de Empleado" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="empresa" [(ngModel)]="empleado.empresa" placeholder="Empresa" class="form-control">
+                </div>
+                <div 
+                class="form-group">
+                    <input type="text" name="antiguedad" [(ngModel)]="empleado.antiguedad" placeholder="Antiguedad" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="url" name="image" [(ngModel)]="empleado.image" placeholder="Imagen" class="form-control">
+                </div>
+                
+                <button 
+                class="btn btn-success btn-block" 
+                (click)="edit ? updateEmpleado() : saveNewEmpleado()">
+                    Guardar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4">
+    <div class="card card-body text-center">
+    <img [src]="empleado.image == '' ? '/assets/noimage.jpg' : empleado.image" class="card-img-top">
+      <h5>{{empleado.id}} - {{empleado.nombre == '' ? 'Nombre' : empleado.nombre}} {{empleado.apellido == '' ? 'Apellido' : empleado.apellido}}</h5>
+      <p>{{empleado.direccion == '' ? 'Direccion de Domicilio' : empleado.direccion}}</p>
+      <p>{{empleado.salario == 0 ? 'Salario' : empleado.salario}}</p>
+      <p>{{empleado.codigoempleado == 0 ? 'Codigo de Empleado' : empleado.codigoempleado}}</p>
+      <p>{{empleado.empresa == '' ? 'Empresa' : empleado.empresa}}</p>
+      <p>{{empleado.antiguedad == '' ? 'Antiguedad' : empleado.antiguedad}}</p>
+    </div>
+  </div>

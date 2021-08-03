@@ -1,0 +1,20 @@
+<div class="col-md-4" *ngFor="let empleado of empleados">
+    <div class="card text-center"></div>
+    <div class="card-header bg-dark text-white d-flex justify-content-between alig-items-center">
+        {{empleado.nombre}}
+        <button class="btn btn-danger" (click)="deleteEmpleado(empleado.id)">
+            <i class="far fa-trash-alt"></i>
+        </button>
+    </div>
+    <img [src]=empleado.image class="card-img-top">
+    <div class="card-body">
+        <p>Apellido: {{empleado.apellido}}</p>
+        <p>Salario: {{empleado.salario}}</p>
+        <p>Codigo de Empleado: {{empleado.codigoempleado}}</p>
+        <p>Empresa: {{empleado.empresa}}</p>
+        <p>Antiguedad: {{empleado.antiguedad}}</p>
+        <a [routerLink]="['/empleados/edit', empleado.id]" class="btn btn-info btn-block">
+            Editar
+        </a>
+    </div>
+</div>
